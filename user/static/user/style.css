@@ -1,0 +1,24 @@
+
+
+p{
+    background-color:rgb(190, 190, 189);
+}
+span{
+    background-color: darkkhaki;
+}
+body{
+    background-color: rgb(238, 223, 203);
+}
+div{
+    background-color: rgb(224, 189, 178);
+}
+.c_blue{
+    background-color: rgb(150, 211, 231);
+}
+#para1{
+    font-weight: bolder;
+}
+.c_offwhite{
+    background-color: rgb(231, 231, 231);
+    font-style: italic ;
+}

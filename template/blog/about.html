@@ -1,0 +1,23 @@
+{% extends 'user/base.html' %}
+{% load crispy_forms_tags %}
+    {% block title %}
+        WMS
+    {% endblock %}
+    {% block content %}
+    <script>
+    document.getElementById('top_nav_home').innerHTML = '<a href="http://127.0.0.1:8000/">Home</a>';
+    document.getElementById('top_nav_home').style="padding-left:25%; padding-right:25%";
+    document.getElementById('top_nav_news').innerHTML = '';
+    document.getElementById('top_nav_contact').innerHTML = '<a href="http://127.0.0.1:8000/login">log in</a>';
+    document.getElementById('top-nav-contact').style="padding-right:50px;";
+    document.getElementById('top_nav_about').innerHTML = '<a href="http://127.0.0.1:8000/register">Sign up</a>';
+    </script>
+    <div>
+        <a href="http://127.0.0.1:8000/login" target="_blank">login</a> <br>
+        <a href="http://127.0.0.1:8000/register" target="_blank">Sign up</a> <br>
+        <a href="http://127.0.0.1:8000/base" target="_blank">base page</a> <br>
+        <a href="http://127.0.0.1:8000/admin" target="_blank">admin</a> <br>
+        <a href="http://127.0.0.1:8000/product" target="_blank">Product Name</a> <br>
+        <a href="http://127.0.0.1:8000/about" target="_blank">about</a> <br>
+    </div>
+    {% endblock %}
