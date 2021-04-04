@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product Name</title>
-</head>
-<body>
-<p>Nothing is added yet</p>
-</body>
-</html>
+{% extends 'user/base2.html' %}
+    {% block title %}
+        product list
+    {% endblock %}
+    {% block content %}
+<!--    {% load static %}-->
+<!--    <link rel="stylesheet"  type="text/css" href="{% static 'user/login.css' %}">-->
+
+    {% if user.is_authenticated %}
+    <p>User is authenticated</p>
+    {% else %}
+    <p>Not authenticated</p>
+    {% endif %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <div id="div1" class="div1 container border-top pt-3">
+        <h3 id="p11">product lists: </h3>
+        {% for product in productlist %}
+<!--            {{ productlist }}-->
+        <div id="div11" class="div1 border-top pt-3">
+            {{ product.product_name }}
+<!--            <p id="p111"> {{ product.price }} </p>-->
+            <ul>
+                <li>Catagory: {{ product.category_name }}</li>
+                <li>Price: {{ product.price }}</li>
+                <li>stock: {% if product.status %}
+                            Available
+                        {% endif %}
+                </li>
+                <li>Stock Quantity: {{ product.quantity }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,72 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <title>Contact</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'blog/contact.css' %}">
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <header id="header">
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="container"></div>
+
+    <section id="hero">
+        <h2>Wholesale Shop</h2>
+    </section>
+
+    <div class="container">
+        <section id="features">
+            <div class="desc">
+                <h2>Mushfiqur Rahman</h2>
+                <p>
+                    email : 18201054@uap-bd.edu
+                </p>
+            </div>
+            <div class="desc">
+                <h2>Md. Shahib Anower</h2>
+                <p>
+                    email : 18201055@uap-bd.edu
+                </p>
+            </div>
+            <div class="desc">
+                <h2>Al Amin</h2>
+                <p>
+                    email : 18201063@uap-bd.edu
+                </p>
+            </div>
+        </section>
+        <footer>
+            <span>Copyright 18201054 - 18201055 - 18201063</span>
+        </footer>
+    </div>
+</body>
+
+</html>

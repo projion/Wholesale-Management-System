@@ -1,0 +1,27 @@
+{% extends 'user/base2.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+</head>
+<body>
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <h3>User details</h3>
+    <div class="container">
+        {% for user in varuser %}
+        Username :{{ user.username }}
+        <ul>
+            <li>NAME: {{ user.firstname }} {{ user.lastname }}</li>
+            <li>AGE: {{ user.user_age }}</li>
+            <li>EMAIL: {{ user.user_email }}</li>
+            <li>PHONE: {{ user.user_phone }}</li>
+            <li>ADDRESS: {{ user.user_address }}</li>
+            <li>TYPE: {{ user.user_type }}</li>
+            <li><img src="{{ user.profile_photo.url }}" alt="img not found"></li>
+        </ul>
+        {% endfor %}
+    </div>
+{%endblock%}
+</body>
+</html>

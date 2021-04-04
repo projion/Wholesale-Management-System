@@ -1,23 +1,93 @@
-{% extends 'user/base.html' %}
-{% load crispy_forms_tags %}
-    {% block title %}
-        WMS
-    {% endblock %}
-    {% block content %}
-    <script>
-    document.getElementById('top_nav_home').innerHTML = '<a href="http://127.0.0.1:8000/">Home</a>';
-    document.getElementById('top_nav_home').style="padding-left:25%; padding-right:25%";
-    document.getElementById('top_nav_news').innerHTML = '';
-    document.getElementById('top_nav_contact').innerHTML = '<a href="http://127.0.0.1:8000/login">log in</a>';
-    document.getElementById('top-nav-contact').style="padding-right:50px;";
-    document.getElementById('top_nav_about').innerHTML = '<a href="http://127.0.0.1:8000/register">Sign up</a>';
-    </script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/about.css' %}">
+</head>
+
+<body>
     <div>
-        <a href="http://127.0.0.1:8000/login" target="_blank">login</a> <br>
-        <a href="http://127.0.0.1:8000/register" target="_blank">Sign up</a> <br>
-        <a href="http://127.0.0.1:8000/base" target="_blank">base page</a> <br>
-        <a href="http://127.0.0.1:8000/admin" target="_blank">admin</a> <br>
-        <a href="http://127.0.0.1:8000/product" target="_blank">Product Name</a> <br>
-        <a href="http://127.0.0.1:8000/about" target="_blank">about</a> <br>
-    </div>
-    {% endblock %}
+        <div id="page-wrapper">
+            <header id="header">
+
+                <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="container"></div>
+
+            <section id="hero">
+                <h2>Wholesale Shop</h2>
+            </section>
+
+            <div class="container">
+                <section id="features">
+                    <div class="grid">
+                        <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
+                        <div class="desc">
+                            <h2>No Third Party</h2>
+                            <p>
+                                Our corporation doesn't allow any involvement with any third party. So, it assures the
+                                transparency.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
+                        <div class="desc">
+                            <h2>Fast Shipping</h2>
+                            <p>
+                                We make sure you recieve your products as soon as we have finished
+                                authorizing it. We also provide free returns if you are not satisfied.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="icon">
+                            <i class="fa fa-3x fa-battery-full" aria-hidden="true"></i>
+                        </div>
+                        <div class="desc">
+                            <h2>Quality Assurance</h2>
+                            <p>
+                                For every purchase you make, we will ensure there are no damages or
+                                faults.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                    <span>Copyright 2021, 18201054, 18201055, 18201063</span>
+                </footer>
+            </div>
+        </div>
+</body>
+
+</html>

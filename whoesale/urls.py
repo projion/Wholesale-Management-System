@@ -14,20 +14,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from user import views as user_view
 from blog import views as blog_view
 from product import views as product_view
 from django.contrib.auth import views as auth_views
 
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog_view.aboutPage, name='user-about'),
+    path('', blog_view.aboutPage, name='about'),
     path('register/', user_view.signup, name = 'register'),
-    path('base/', user_view.basePage),
-    path('product/', product_view.product),
+    path('base/', user_view.basePage, name='base'),
+    path('product/', include('product.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='user/login.html'),name='login'),
     path('logout/', auth_views.LoginView.as_view(template_name='user/logout.html'),name='logout'),
-    path('home/', blog_view.homepage, name = 'homepage')
+    path('homepage/', blog_view.homepage, name = 'homepage'),
+    path('contact/', blog_view.contactPage, name='contact'),
+    path('home/', user_view.userhome, name = 'home'),
+    path('registration/', user_view.signup2, name='manual-signup'),
+    path('signup2/', user_view.signup2, name='signup2'),
+    path('login2/', user_view.login2, name='login2'),
+    path('base2/', user_view.basePage, name='base2'),
+    path('profile/',user_view.profile, name='profile')
 ]
-# path('login/', user_view.login),
+path('login/', user_view.login),
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
